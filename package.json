@@ -5,7 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron src/main.js",
-    "test": "jshint src/lib/ src/*.js && jscs src/lib/ src/*.js"
+    "test": "jshint src/lib/ src/*.js && jscs src/lib/ src/*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -27,12 +29,14 @@
     "chalk": "^1.1.1",
     "http-mitm-proxy": "^0.5.0",
     "istextorbinary": "^2.0.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "electron-packager": "^6.0.0",
     "electron-prebuilt": "^0.36.12",
     "jscs": "^2.6.0",
     "jshint": "^2.8.0"
-  }
+  },
+  "snyk": true
 }
